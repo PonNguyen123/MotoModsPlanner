@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MotoMods Planner</title>
+
+  <meta
+    name="description"
+    content="Plan and visualize your next motorcycle upgrades with MotoMods Planner."
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">MotoMods<span>Planner</span></div>
+    <nav class="nav">
+      <a href="#hero">Home</a>
+      <a href="#features">Features</a>
+      <a href="#planner">Planner</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1>Plan Your Next Motorcycle Upgrade</h1>
+        <p>
+          Track mods, estimate cost, and keep your dream build organized –
+          all in one clean interface.
+        </p>
+        <button class="primary-btn" id="startPlannerBtn">
+          Start Planning
+        </button>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <h2>Why MotoMods Planner?</h2>
+      <p>
+        A lightweight planning tool concept for riders who want to structure
+        their build like a real product roadmap.
+      </p>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Organize Upgrades</h3>
+          <p>Group your mods by engine, chassis, aesthetics, or electronics.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Track Budget</h3>
+          <p>Estimate total cost and adjust based on priorities.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Visual Roadmap</h3>
+          <p>See your build progress from stock to fully customized.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Planner Section (interactive area) -->
+    <section id="planner" class="planner">
+      <h2>Quick Mod Planner</h2>
+      <p class="planner-intro">
+        Add a few planned mods below, set a target budget, and get a quick overview.
+      </p>
+
+      <!-- Budget controls -->
+      <div class="budget-panel">
+        <div class="budget-row">
+          <label for="budgetInput">Target budget (USD)</label>
+          <input
+            type="number"
+            id="budgetInput"
+            min="0"
+            step="50"
+            placeholder="1000"
+          />
+        </div>
+        <div class="budget-row">
+          <div class="budget-progress-text">
+            <span>Budget usage:</span>
+            <span id="budgetPercent">—</span>
+          </div>
+          <div class="budget-bar">
+            <div id="budgetBarFill" class="budget-bar-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <form id="modForm" class="mod-form">
+        <div class="form-row">
+          <label for="modName">Mod name</label>
+          <input
+            type="text"
+            id="modName"
+            placeholder="Example: Full system exhaust"
+            required
+          />
+        </div>
+        <div class="form-row">
+          <label for="modCategory">Category</label>
+          <select id="modCategory">
+            <option value="Engine">Engine</option>
+            <option value="Chassis">Chassis</option>
+            <option value="Brakes">Brakes</option>
+            <option value="Aesthetics">Aesthetics</option>
+            <option value="Electronics">Electronics</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="modCost">Estimated cost (USD)</label>
+          <input
+            type="number"
+            id="modCost"
+            min="0"
+            step="10"
+            placeholder="300"
+            required
+          />
+        </div>
+        <button type="submit" class="primary-btn">Add Mod</button>
+      </form>
+
+      <div class="planner-output">
+        <div>
+          <h3>Planned Mods</h3>
+          <ul id="modList" class="mod-list">
+            <!-- JS will inject items here -->
+          </ul>
+        </div>
+
+        <div class="planner-summary">
+          <p>Total estimated cost: <span id="totalCost">$0</span></p>
+          <button class="secondary-btn" id="randomIdeaBtn">
+            Need inspiration? Get a random mod idea
+          </button>
+          <p id="ideaOutput" class="idea-output"></p>
+
+          <div class="category-summary">
+            <h4>By category</h4>
+            <div id="categorySummaryList" class="category-summary-list">
+              <!-- JS fills this -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Reflection Section -->
+    <section id="about" class="about">
+      <h2>About This Prototype</h2>
+      <p>
+        This rapid-ideation prototype explores a niche SaaS-style tool for
+        motorcycle upgrade planning. It demonstrates interactive budgeting,
+        basic data visualization, and persistent state using browser storage.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 MotoMods Planner · Rapid Ideation Prototype</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
